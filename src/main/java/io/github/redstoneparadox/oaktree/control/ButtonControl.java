@@ -212,8 +212,11 @@ public class ButtonControl extends Control implements MouseButtonListener {
 			mouseHeld = !released;
 
 			if (mouseClicked) {
+				mousePressPose = mousePose;
 				MinecraftClient client = MinecraftClient.getInstance();
 				client.getSoundManager().play(PositionedSoundInstance.create(clickSound, 1.0F));
+			} else {
+				mousePressPose = null;
 			}
 		}
 	}
